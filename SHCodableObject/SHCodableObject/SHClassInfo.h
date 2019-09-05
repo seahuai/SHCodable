@@ -7,10 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SHMethodInfo.h"
+#import "SHIvarInfo.h"
+#import "SHPropertyInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SHClassInfo : NSObject
+
+@property (nonatomic, readonly) Class class;
+
+@property (nonatomic, nullable, readonly) Class superClass;
+
+@property (nonatomic, nullable, readonly) Class metaClass;
+
+@property (nonatomic, readonly) BOOL isMeta;
+
+@property (nonatomic, readonly) NSString *name;
+
+@property (nonatomic, nullable, readonly) SHClassInfo *superClassInfo;
+
+@property (nonatomic, readonly) NSDictionary<NSString *, SHMethodInfo *> *methodsInfo;
+
+@property (nonatomic, readonly) NSDictionary<NSString *, SHIvarInfo *> *ivarInfos;
+
+@property (nonatomic, readonly) NSDictionary<NSString *, SHPropertyInfo *> *propertyInfos;
 
 @end
 

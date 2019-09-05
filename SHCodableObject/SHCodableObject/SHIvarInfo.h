@@ -1,5 +1,5 @@
 //
-//  SHPropertyInfo.h
+//  SHIvarInfo.h
 //  SHCodableObject
 //
 //  Created by 张思槐 on 2019/9/5.
@@ -12,25 +12,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SHPropertyInfo : NSObject
+@interface SHIvarInfo : NSObject
 
-@property (nonatomic, readonly) objc_property_t property;
+@property (nonatomic, readonly) Ivar ivar;
 
 @property (nonatomic, readonly) NSString *name;
 
-@property (nonatomic, readonly) NSString *ivarName;
+@property (nonatomic, readonly) ptrdiff_t offset;
 
 @property (nonatomic, readonly) NSString *typeEncoding;
 
 @property (nonatomic, readonly) SHEncodingType type;
-
-@property (nonatomic, readonly) SEL setter;
-
-@property (nonatomic, readonly) SEL getter;
-
-@property (nonatomic, nullable, readonly) Class class;
-
-@property (nonatomic, nullable, readonly) NSArray<NSString *> *protocols;
 
 @end
 

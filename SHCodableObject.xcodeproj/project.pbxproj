@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		353742782320E92600B18C46 /* SHMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 353742772320E92600B18C46 /* SHMethodInfo.m */; };
+		3537427B2320E93000B18C46 /* SHIvarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3537427A2320E93000B18C46 /* SHIvarInfo.m */; };
 		358716242320B8360069A3E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 358716232320B8360069A3E4 /* AppDelegate.m */; };
 		358716272320B8360069A3E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 358716262320B8360069A3E4 /* ViewController.m */; };
 		3587162A2320B8360069A3E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 358716282320B8360069A3E4 /* Main.storyboard */; };
@@ -19,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		353742762320E92600B18C46 /* SHMethodInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMethodInfo.h; sourceTree = "<group>"; };
+		353742772320E92600B18C46 /* SHMethodInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHMethodInfo.m; sourceTree = "<group>"; };
+		353742792320E93000B18C46 /* SHIvarInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHIvarInfo.h; sourceTree = "<group>"; };
+		3537427A2320E93000B18C46 /* SHIvarInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHIvarInfo.m; sourceTree = "<group>"; };
+		3537427C2320F4E600B18C46 /* SHEncodingType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHEncodingType.h; sourceTree = "<group>"; };
 		3587161F2320B8360069A3E4 /* SHCodableObject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHCodableObject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		358716222320B8360069A3E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		358716232320B8360069A3E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +97,11 @@
 				3587163D2320BB360069A3E4 /* SHClassInfo.m */,
 				3587163F2320BB400069A3E4 /* SHPropertyInfo.h */,
 				358716402320BB400069A3E4 /* SHPropertyInfo.m */,
+				353742762320E92600B18C46 /* SHMethodInfo.h */,
+				353742772320E92600B18C46 /* SHMethodInfo.m */,
+				353742792320E93000B18C46 /* SHIvarInfo.h */,
+				3537427A2320E93000B18C46 /* SHIvarInfo.m */,
+				3537427C2320F4E600B18C46 /* SHEncodingType.h */,
 			);
 			path = SHCodableObject;
 			sourceTree = "<group>";
@@ -164,8 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3537427B2320E93000B18C46 /* SHIvarInfo.m in Sources */,
 				3587163E2320BB360069A3E4 /* SHClassInfo.m in Sources */,
 				358716272320B8360069A3E4 /* ViewController.m in Sources */,
+				353742782320E92600B18C46 /* SHMethodInfo.m in Sources */,
 				358716322320B8380069A3E4 /* main.m in Sources */,
 				358716412320BB400069A3E4 /* SHPropertyInfo.m in Sources */,
 				358716242320B8360069A3E4 /* AppDelegate.m in Sources */,
