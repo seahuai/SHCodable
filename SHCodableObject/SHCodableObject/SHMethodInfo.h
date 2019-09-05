@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSArray<NSString *> *argumentsTypeEncoding;
 
+- (instancetype)initWithMethod:(Method)method;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -33,6 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) NSDictionary<NSString *, SHPropertyInfo *> *propertyInfos;
 
++ (instancetype)classInfoWithClass:(Class)class;
+
++ (instancetype)classInfoWithClassName:(NSString *)className;
+
 @end
 
 NS_ASSUME_NONNULL_END
