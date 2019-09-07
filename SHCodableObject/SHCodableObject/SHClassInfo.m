@@ -32,12 +32,49 @@
 }
 
 + (instancetype)classInfoWithClass:(Class)class {
-    return [[self alloc] initWithClass:class];
+    return [self classInfoWithClass:class needUpdate:true];
 }
 
 + (instancetype)classInfoWithClassName:(NSString *)className {
     Class cls = NSClassFromString(className ?: @"");
     return [self classInfoWithClass:cls];
+}
+
++ (instancetype)classInfoWithClass:(Class)class needUpdate:(BOOL)needUpdate {
+    if (!class) { return nil; }
+    static CFMutableDictionaryRef classCache;
+    static CFMutableDictionaryRef metaClassCache;
+    static dispatch_semaphore_t lock;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        classCache = CFDictionaryCreateMutable(CFAllocatorGetDefault(), 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+        metaClassCache = CFDictionaryCreateMutable(CFAllocatorGetDefault(), 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+        lock = dispatch_semaphore_create(1);
+    });
+    
+    SHClassInfo *classInfo;
+    CFMutableDictionaryRef cache = class_isMetaClass(class) ? metaClassCache : classCache;
+    if (needUpdate)
+    {
+        classInfo = [[SHClassInfo alloc] initWithClass:class];
+        dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+        CFDictionarySetValue(cache, (__bridge void *)(class), (__bridge void *)(classInfo));
+        dispatch_semaphore_signal(lock);
+    }
+    else
+    {
+        dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+        classInfo = CFDictionaryGetValue(cache, (__bridge void *)(class));
+        if (!classInfo) {
+            classInfo = [[SHClassInfo alloc] initWithClass:class];
+            CFDictionarySetValue(cache, (__bridge void *)(class), (__bridge void *)(classInfo));
+        }
+        dispatch_semaphore_signal(lock);
+    }
+    
+    NSParameterAssert(classInfo != nil);
+    return classInfo;
 }
 
 // MARK: - Method

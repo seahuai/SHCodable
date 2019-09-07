@@ -37,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)classInfoWithClassName:(NSString *)className;
 
++ (instancetype)classInfoWithClass:(Class)class needUpdate:(BOOL)needUpdate;
+
 @end
 
 NS_ASSUME_NONNULL_END
