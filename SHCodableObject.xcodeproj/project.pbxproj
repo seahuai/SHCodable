@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		352C85DC232380D60006D8CC /* SHEncodingType.m in Sources */ = {isa = PBXBuildFile; fileRef = 352C85DB232380D60006D8CC /* SHEncodingType.m */; };
 		353742782320E92600B18C46 /* SHMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 353742772320E92600B18C46 /* SHMethodInfo.m */; };
 		3537427B2320E93000B18C46 /* SHIvarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3537427A2320E93000B18C46 /* SHIvarInfo.m */; };
 		358716242320B8360069A3E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 358716232320B8360069A3E4 /* AppDelegate.m */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		352C85DB232380D60006D8CC /* SHEncodingType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHEncodingType.m; sourceTree = "<group>"; };
 		353742762320E92600B18C46 /* SHMethodInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMethodInfo.h; sourceTree = "<group>"; };
 		353742772320E92600B18C46 /* SHMethodInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHMethodInfo.m; sourceTree = "<group>"; };
 		353742792320E93000B18C46 /* SHIvarInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHIvarInfo.h; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				353742792320E93000B18C46 /* SHIvarInfo.h */,
 				3537427A2320E93000B18C46 /* SHIvarInfo.m */,
 				3537427C2320F4E600B18C46 /* SHEncodingType.h */,
+				352C85DB232380D60006D8CC /* SHEncodingType.m */,
 			);
 			path = SHCodableObject;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				352C85DC232380D60006D8CC /* SHEncodingType.m in Sources */,
 				3537427B2320E93000B18C46 /* SHIvarInfo.m in Sources */,
 				3587163E2320BB360069A3E4 /* SHClassInfo.m in Sources */,
 				358716272320B8360069A3E4 /* ViewController.m in Sources */,

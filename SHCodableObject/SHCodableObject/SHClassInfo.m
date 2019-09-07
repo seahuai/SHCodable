@@ -9,7 +9,7 @@
 #import "SHClassInfo.h"
 
 @interface SHClassInfo ()
-@property (nonatomic, assign) Class class;
+@property (nonatomic, assign) Class cls;
 @property (nonatomic, nullable, assign) Class superClass;
 @property (nonatomic, nullable, assign) Class metaClass;
 @property (nonatomic, assign) BOOL isMeta;
@@ -42,7 +42,7 @@
 
 // MARK: - Method
 - (void)initializeClassInfo:(Class)class {
-    _class = class;
+    _cls = class;
     _name = NSStringFromClass(class);
     
     _superClass = class_getSuperclass(class);
@@ -65,10 +65,8 @@
 - (void)updateMethodInfos {
     NSMutableDictionary <NSString *, SHMethodInfo *> *methodInfos = [NSMutableDictionary dictionary];
     
-    Class class = self.class;
-    
     unsigned int methodsCount = 0;
-    Method *methods = class_copyMethodList(class, &methodsCount);
+    Method *methods = class_copyMethodList(self.cls, &methodsCount);
     for (int i = 0; i < methodsCount; ++i) {
         Method method = methods[i];
         SHMethodInfo *methodInfo = [[SHMethodInfo alloc] initWithMethod:method];
@@ -79,11 +77,31 @@
 }
 
 - (void)updateIvarInfos {
+    NSMutableDictionary <NSString *, SHIvarInfo *> *ivarInfos = [NSMutableDictionary dictionary];
     
+    unsigned int ivarsCount = 0;
+    Ivar *ivars = class_copyIvarList(self.cls, &ivarsCount);
+    for (int i = 0; i < ivarsCount; ++i) {
+        Ivar ivar = ivars[i];
+        SHIvarInfo *ivarInfo = [[SHIvarInfo alloc] initWithIvar:ivar];
+        ivarInfos[ivarInfo.name] = ivarInfo;
+    }
+    
+    _ivarInfos = ivarInfos.copy;
 }
 
 - (void)updatePropertyInfos {
+    NSMutableDictionary <NSString *, SHPropertyInfo *> *propertyInfos = [NSMutableDictionary dictionary];
     
+    unsigned int propertysCount = 0;
+    objc_property_t *propertys = class_copyPropertyList(self.cls, &propertysCount);
+    for (int i = 0 ; i < propertysCount; ++i) {
+        objc_property_t property = propertys[i];
+        SHPropertyInfo *propertyInfo = [[SHPropertyInfo alloc] initWithProperty:property];
+        propertyInfos[propertyInfo.name] = propertyInfo;
+    }
+    
+    _propertyInfos = propertyInfos.copy;
 }
 
 @end

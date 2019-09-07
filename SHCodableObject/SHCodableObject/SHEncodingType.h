@@ -6,6 +6,8 @@
 //  Copyright © 2019 张思槐. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #ifndef SHEncodingType_h
 #define SHEncodingType_h
 
@@ -62,6 +64,7 @@ typedef NS_OPTIONS(NSUInteger, SHEncodingType) {
     SHEncodingTypePropertyDynamic      = 1 << 23, ///< @dynamic
 };
 
-
+// Method Define
+SHEncodingType SHEncodingGetType(const char *typeEncoding);
 
 #endif /* SHEncodingType_h */

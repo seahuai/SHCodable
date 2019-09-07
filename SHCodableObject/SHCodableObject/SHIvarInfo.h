@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) SHEncodingType type;
 
+- (instancetype)initWithIvar:(Ivar)ivar;
+
 @end
 
 NS_ASSUME_NONNULL_END

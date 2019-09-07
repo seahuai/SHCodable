@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SHClassInfo : NSObject
 
-@property (nonatomic, readonly) Class class;
+@property (nonatomic, readonly) Class cls;
 
 @property (nonatomic, nullable, readonly) Class superClass;
 

@@ -28,9 +28,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) SEL getter;
 
-@property (nonatomic, nullable, readonly) Class class;
+@property (nonatomic, nullable, readonly) Class cls;
 
 @property (nonatomic, nullable, readonly) NSArray<NSString *> *protocols;
+
+- (instancetype)initWithProperty:(objc_property_t)property;
 
 @end
 
