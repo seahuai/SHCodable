@@ -67,4 +67,27 @@ typedef NS_OPTIONS(NSUInteger, SHEncodingType) {
 // Method Define
 SHEncodingType SHEncodingGetType(const char *typeEncoding);
 
+/// Foundation Class Type
+typedef NS_ENUM (NSUInteger, SHEncodingNSType) {
+    SHEncodingTypeNSUnknown = 0,
+    SHEncodingTypeNSString,
+    SHEncodingTypeNSMutableString,
+    SHEncodingTypeNSValue,
+    SHEncodingTypeNSNumber,
+    SHEncodingTypeNSDecimalNumber,
+    SHEncodingTypeNSData,
+    SHEncodingTypeNSMutableData,
+    SHEncodingTypeNSDate,
+    SHEncodingTypeNSURL,
+    SHEncodingTypeNSArray,
+    SHEncodingTypeNSMutableArray,
+    SHEncodingTypeNSDictionary,
+    SHEncodingTypeNSMutableDictionary,
+    SHEncodingTypeNSSet,
+    SHEncodingTypeNSMutableSet,
+    SHEncodingTypeNSNull
+};
+
+SHEncodingNSType SHEncodingGetNSType(Class cls);
+
 #endif /* SHEncodingType_h */

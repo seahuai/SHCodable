@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		351134ED2329240100DADB33 /* SHPropertyInfo+Method.m in Sources */ = {isa = PBXBuildFile; fileRef = 351134EC2329240100DADB33 /* SHPropertyInfo+Method.m */; };
 		352C85DC232380D60006D8CC /* SHEncodingType.m in Sources */ = {isa = PBXBuildFile; fileRef = 352C85DB232380D60006D8CC /* SHEncodingType.m */; };
 		353742782320E92600B18C46 /* SHMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 353742772320E92600B18C46 /* SHMethodInfo.m */; };
 		3537427B2320E93000B18C46 /* SHIvarInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3537427A2320E93000B18C46 /* SHIvarInfo.m */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		351134EB2329240100DADB33 /* SHPropertyInfo+Method.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SHPropertyInfo+Method.h"; sourceTree = "<group>"; };
+		351134EC2329240100DADB33 /* SHPropertyInfo+Method.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SHPropertyInfo+Method.m"; sourceTree = "<group>"; };
 		352C85DB232380D60006D8CC /* SHEncodingType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHEncodingType.m; sourceTree = "<group>"; };
 		353742762320E92600B18C46 /* SHMethodInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHMethodInfo.h; sourceTree = "<group>"; };
 		353742772320E92600B18C46 /* SHMethodInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHMethodInfo.m; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				3537427A2320E93000B18C46 /* SHIvarInfo.m */,
 				3537427C2320F4E600B18C46 /* SHEncodingType.h */,
 				352C85DB232380D60006D8CC /* SHEncodingType.m */,
+				351134EB2329240100DADB33 /* SHPropertyInfo+Method.h */,
+				351134EC2329240100DADB33 /* SHPropertyInfo+Method.m */,
 			);
 			path = SHCodableObject;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				358716322320B8380069A3E4 /* main.m in Sources */,
 				358716412320BB400069A3E4 /* SHPropertyInfo.m in Sources */,
 				358716242320B8360069A3E4 /* AppDelegate.m in Sources */,
+				351134ED2329240100DADB33 /* SHPropertyInfo+Method.m in Sources */,
 				3587163B2320B8EB0069A3E4 /* NSObject+SHCodable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

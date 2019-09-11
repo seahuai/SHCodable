@@ -86,3 +86,76 @@ SHEncodingType SHEncodingGetType(const char *typeEncoding) {
     }
 }
 
+SHEncodingNSType SHEncodingGetNSType(Class cls) {
+    if (!cls) {
+        return SHEncodingTypeNSUnknown;
+    }
+    
+    // 存在继承关系，应优先判断子类
+    if ([cls isSubclassOfClass:NSNull.class]) {
+        return SHEncodingTypeNSNull;
+    }
+    
+    if ([cls isSubclassOfClass:NSValue.class]) {
+        return SHEncodingTypeNSValue;
+    }
+    
+    if ([cls isSubclassOfClass:NSDate.class]) {
+        return SHEncodingTypeNSDate;
+    }
+    
+    if ([cls isSubclassOfClass:NSURL.class]) {
+        return SHEncodingTypeNSURL;
+    }
+    
+    if ([cls isSubclassOfClass:NSMutableString.class]) {
+        return SHEncodingTypeNSMutableString;
+    }
+    
+    if ([cls isSubclassOfClass:NSString.class]) {
+        return SHEncodingTypeNSString;
+    }
+    
+    if ([cls isSubclassOfClass:NSDecimalNumber.class]) {
+        return SHEncodingTypeNSDecimalNumber;
+    }
+    
+    if ([cls isSubclassOfClass:NSNumber.class]) {
+        return SHEncodingTypeNSNumber;
+    }
+    
+    if ([cls isSubclassOfClass:NSMutableData.class]) {
+        return SHEncodingTypeNSMutableData;
+    }
+    
+    if ([cls isSubclassOfClass:NSData.class]) {
+        return SHEncodingTypeNSData;
+    }
+
+    if ([cls isSubclassOfClass:NSMutableArray.class]) {
+        return SHEncodingTypeNSMutableArray;
+    }
+    
+    if ([cls isSubclassOfClass:NSArray.class]) {
+        return SHEncodingTypeNSArray;
+    }
+    
+    if ([cls isSubclassOfClass:NSMutableDictionary.class]) {
+        return SHEncodingTypeNSMutableDictionary;
+    }
+    
+    if ([cls isSubclassOfClass:NSDictionary.class]) {
+        return SHEncodingTypeNSDictionary;
+    }
+    
+    if ([cls isSubclassOfClass:NSMutableSet.class]) {
+        return SHEncodingTypeNSMutableSet;
+    }
+    
+    if ([cls isSubclassOfClass:NSSet.class]) {
+        return SHEncodingTypeNSSet;
+    }
+    
+    return SHEncodingTypeNSUnknown;
+}
+
